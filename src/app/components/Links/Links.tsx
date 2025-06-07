@@ -1,6 +1,5 @@
 import linkedin from "../../assets/linkedin.png";
 import github from "../../assets/github.png";
-import cv from "../../assets/cv.jpg";
 //import pdf from "../../assets/pdf/Gökay _DEMİREL_cv.pdf";
 import Image from "next/image";
 function Links() {

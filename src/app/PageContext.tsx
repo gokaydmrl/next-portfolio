@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import { createContext, useContext, useState } from "react";
 import type { ReactNode } from "react";
 // Define allowed page names
@@ -40,7 +40,6 @@ export const PageProvider = ({ children }: { children: ReactNode }) => {
 };
 
 // Custom hook to use the context
-// eslint-disable-next-line react-refresh/only-export-components
 export const usePage = (): PageContextType => {
   const context = useContext(PageContext);
   if (!context) {

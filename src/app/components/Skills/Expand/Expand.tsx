@@ -12,11 +12,9 @@ function Expand({ component }: { component: TComponent }) {
       key={component}
       className={component === expand[component].name ? "fadeIn" : "fadeOut"}
     >
-      <StackWithText
-        key={component}
-        list={selectedComponent.list}
-        children={childComponent}
-      />
+      <StackWithText key={component} list={selectedComponent.list}>
+        {childComponent}
+      </StackWithText>
       <ComponentToRender />
     </ExpandWrapper>
   );

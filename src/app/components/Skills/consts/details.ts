@@ -130,7 +130,7 @@ export const aiDetails = [
   },
   {
     src: ai5,
-    text: "Explored and utilized OpenAI’s APIs to bring intelligent features into products.",
+    text: "Explored and utilized OpenAIs APIs to bring intelligent features into products.",
     isLeft: true,
   },
 ];
