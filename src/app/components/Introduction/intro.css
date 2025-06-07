@@ -1,0 +1,108 @@
+.introWrapper {
+  display: grid;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2vw;
+  padding-top: 16px;
+}
+.intro {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.imgWrapper {
+  flex: 0 0 40%;
+}
+.introTexts {
+  flex: 0 0 60%;
+
+  display: grid;
+  flex-direction: column;
+  gap: 16px;
+  align-items: center;
+  justify-content: start;
+}
+.greet {
+  font-size: 48px;
+  font-weight: 600;
+}
+.nameAndTitle {
+  display: grid;
+  gap: 16px;
+  flex-direction: column;
+  text-align: left;
+  justify-content: center;
+  align-items: center;
+}
+.name {
+  font-size: clamp(1rem, 2.5vw + 1rem, 8rem);
+  font-weight: bold;
+  line-height: clamp(2.5rem, 2.5vw + 1rem, 8rem);
+  letter-spacing: 4px;
+  color: rgb(216, 140, 140);
+}
+.title {
+  font-size: clamp(2rem, 0.5vw + 1rem, 6rem);
+  font-weight: 100;
+  color: rgb(216, 140, 140);
+}
+@media only screen and (max-width: 650px) {
+  .intro {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+  }
+  .greet {
+    font-size: 32px;
+  }
+  .introWrapper {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+  }
+  .nameAndTitle {
+    text-align: center;
+    gap: 0;
+  }
+  .introTexts {
+    justify-content: center;
+  }
+
+  .mobilMyImg {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    width: 70%;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 1.2rem;
+  }
+}
+/* BLINK */
+
+.typewriter {
+  font-family: monospace;
+  font-size: 2rem;
+  white-space: nowrap;
+  overflow: hidden;
+  display: inline-block;
+  color: white;
+}
+
+.cursor {
+  width: 3px;
+  margin-left: 2px;
+  border-left: 2px solid black;
+  animation: blink 0.7s steps(1) infinite;
+  border: 5px solid rgb(231, 187, 187);
+}
+
+@keyframes blink {
+  50% {
+    border-color: transparent;
+  }
+}

@@ -1,0 +1,1 @@
+ALTER TABLE "message" DROP CONSTRAINT "message_id_unique";

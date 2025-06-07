@@ -1,0 +1,242 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+Symbols+2&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Montserrat:400,700");
+@import url("https://fonts.cdnfonts.com/css/segoe-script");
+/* * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html,
+body {
+  overscroll-behavior-x: none;
+  overscroll-behavior-y: none;
+} */
+/* html {
+  font-size: 100%;
+  -webkit-text-size-adjust: 100%;
+  font-variant-ligatures: none;
+  -webkit-font-variant-ligatures: none;
+  text-rendering: optimizeLegibility;
+  -moz-osx-font-smoothing: grayscale;
+  font-smoothing: antialiased;
+  -webkit-font-smoothing: antialiased;
+} */
+/* body {
+  position: relative;
+  color: #777;
+  font-family: "Segoe Script", sans-serif;
+  font-size: max(20px, 4vw);
+  font-weight: 500;
+  width: 100vw;
+  min-height: 100vh;
+  text-align: center;
+  line-height: 1;
+  overflow-x: hidden;
+} */
+main {
+  position: relative;
+}
+section {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  min-height: 100vh;
+  overflow-x: hidden;
+  overflow-y: visible;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/* h1 {
+  font-family: "Montserrat", sans-serif;
+  font-size: max(25px, 7vw);
+  font-weight: bold;
+} */
+hr {
+  margin: 0.5em 0;
+  height: clamp(2px, 0.5vw, 5px);
+
+  border: 0.5px solid rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  animation: bg1 10s linear infinite alternate both;
+  filter: saturate(2.2);
+}
+.emoji {
+  margin: 0.3em 0;
+  font-family: sans-serif;
+  font-size: 1.78rem;
+  -webkit-text-stroke: 0.5px rgba(0, 0, 0, 0.3);
+  color: transparent;
+
+  transform: translateZ(0);
+  animation: bg1 10s linear infinite alternate both;
+  filter: saturate(3);
+}
+#copyright {
+  font-size: 0.85rem;
+}
+#background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background-color: white;
+
+  user-select: none;
+  pointer-events: none;
+  z-index: -1;
+}
+#background > div {
+  --size: 5vw;
+  --symbol: "🎈";
+
+  --pos_x: 0vw;
+  --duration_move: 7s;
+  --delay_move: 0s;
+
+  --duration_rotate: 1.5s;
+  --delay_rotate: 0s;
+  --duration_clip: 10s;
+  --delay_clip: 0s;
+  --hue: 0deg;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-size: clamp(15px, var(--size), 80px);
+  font-family: "Noto Sans Symbols 2", sans-serif;
+  transform-origin: center top;
+  animation: move var(--duration_move) var(--delay_move) linear infinite normal
+    both;
+}
+#background span {
+  display: block;
+  position: relative;
+  transform-origin: center;
+  transform: rotate(0deg);
+  animation: rotate var(--duration_rotate) var(--delay_rotate) ease-in-out
+    infinite alternate both;
+}
+#background span:after {
+  content: var(--symbol);
+  -webkit-text-stroke: 0.5px rgba(0, 0, 0, 0.2);
+  line-height: 1.2;
+  position: relative;
+  display: block;
+  color: transparent;
+  background-clip: text;
+  /*
+  filter: contrast(0.8) brightness(1.2) hue-rotate(var(--hue))
+    drop-shadow(0px 0px 0.1px gold);
+  */
+  filter: brightness(1.2) hue-rotate(var(--hue));
+  background-image: url(https://images.unsplash.com/photo-1580822115965-0b2532068eff?&ixid=M3wzMjM4NDZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE2OTUxNDUzNzJ8&ixlib=rb-4.0.3&q=100&w=200&dpr=2);
+  background-position: center;
+  background-size: 200px auto; /* 必要に応じて調整 */
+  background-repeat: repeat;
+  transform: translateZ(0);
+  animation: bg1 var(--duration_clip) var(--delay_clip) linear infinite
+    alternate both;
+}
+#background > div:nth-child(even) span:after {
+  animation-name: bg2;
+}
+@keyframes bg1 {
+  0% {
+    background-position: 0% 0%;
+  }
+  100% {
+    background-position: 100% 100%;
+  }
+}
+@keyframes bg2 {
+  0% {
+    background-position: 100% 0%;
+  }
+  100% {
+    background-position: 0% 100%;
+  }
+}
+@keyframes rotate {
+  0% {
+    transform: rotate(115deg);
+  }
+  100% {
+    transform: rotate(245deg);
+  }
+}
+@keyframes move {
+  0% {
+    transform: translate3d(var(--pos_x), calc(0vh - var(--size)), 0);
+  }
+  100% {
+    transform: translate3d(var(--pos_x), 100vh, 0);
+  }
+}
+
+
+.bubbles {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  max-height: 100%;
+  z-index: -1;
+}
+
+.bubble {
+  position: relative;
+  bottom: 0;
+  border-radius: 50%;
+  background: transparent;
+  height: 100%;
+  animation: float-up 3s infinite;
+  animation: sway-left-to-right 3s infinite;
+
+  /* bubble color will come from the inner div */
+}
+
+.bubble-inner {
+  width: 100%;
+  height: 100%;
+  background: hsla(183, 94%, 76%, 0.3);
+  border-radius: 50%;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  position: absolute;
+  top: 0;
+  left: 0;
+  animation: float-up 6s infinite;
+}
+
+@keyframes float-up {
+  from {
+    transform: translateY(600px);
+  }
+
+  to {
+    transform: translateY(-300vw);
+  }
+}
+
+@keyframes sway-left-to-right {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes sway-right-to-left {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}

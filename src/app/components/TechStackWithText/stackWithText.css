@@ -1,0 +1,13 @@
+.stackWrapper {
+  display: flex;
+  flex-direction: row;
+  gap: 32px;
+}
+
+@media only screen and (max-width: 650px) {
+  .stackWrapper {
+    display: grid;
+    gap: 32px;
+    text-align: left;
+  }
+}

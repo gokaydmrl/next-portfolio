@@ -1,0 +1,6 @@
+.pointer {
+  cursor: pointer;
+}
+.activeTab {
+  color: rgb(216, 140, 140);
+}

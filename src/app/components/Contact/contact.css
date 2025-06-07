@@ -1,0 +1,10 @@
+.respSize{
+    font-size: 24px;
+}
+
+@media only screen and (max-width: 650px) {
+    .respSize{
+        font-size: 16px;
+    }
+    
+}
