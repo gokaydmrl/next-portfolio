@@ -5,7 +5,7 @@ function DetailBackend() {
         🛠 My core strength lies in building scalable, efficient backend systems
         using Node.js, Express, Fastify, and NestJS. I design robust APIs,
         handle asynchronous workloads, implement scheduled tasks, and integrate
-        real-time notification systems. I'm experienced with databases like
+        real-time notification systems. I am experienced with databases like
         PostgreSQL (via Prisma, Neon, Supabase) and NoSQL alternatives. I focus
         on performance, modular architecture, and developer-friendly tooling
         that scales with product needs.
